@@ -7,48 +7,66 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #0377fc;
-      --accent: #21d397;
-      --bg: #0a192f;
+      --primary: #1E90FF;   /* Deep Sky Blue */
+      --accent: #00CED1;    /* Vibrant Teal */
+      --bg: #f0f4f8;        /* Light Gray-Blue */
       --white: #fff;
-      --radius: 14px;
-      --shadow: 0 8px 24px rgba(3, 39, 80, 0.13);
+      --text-dark: #333333;
+      --radius: 16px;
+      --shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      --highlight: rgba(0, 206, 209, 0.2);
     }
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #0a192f 0%, #202860 100%);
+      background: linear-gradient(135deg, #f0f4f8, #e8f0f5);
       min-height: 100vh;
       font-family: 'Montserrat', Arial, sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
+      animation: backgroundAnimation 20s ease-in-out infinite;
+    }
+    @keyframes backgroundAnimation {
+      0% {
+        background: linear-gradient(135deg, #f0f4f8, #e8f0f5);
+      }
+      50% {
+        background: linear-gradient(135deg, #e8f0f5, #c1d9e2);
+      }
+      100% {
+        background: linear-gradient(135deg, #f0f4f8, #e8f0f5);
+      }
     }
     header {
       width: 100%;
-      padding: 40px 0 18px 0;
-      background: linear-gradient(90deg, #21d397 0%, #0377fc 100%);
+      padding: 40px 0;
+      background-color: var(--primary);
+      color: var(--white);
       text-align: center;
-      box-shadow: 0 2px 10px rgba(3, 39, 80, 0.11);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 0 0 30px 30px;
+      margin-bottom: 30px;
+      position: relative;
     }
     h1 {
-      color: var(--white);
-      font-size: 2.4rem;
+      font-size: 2.6rem;
       font-weight: 700;
+      letter-spacing: 1px;
       margin: 0;
-      letter-spacing: 2px;
-      text-shadow: 0 4px 16px rgba(3, 119, 252, 0.1);
+      text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     }
     .top-btn {
       position: absolute;
       left: 30px;
       top: 36px;
-      padding: 10px 22px;
+      padding: 12px 25px;
       background: var(--white);
       color: var(--primary);
       border: none;
       border-radius: var(--radius);
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: 600;
       box-shadow: var(--shadow);
       text-decoration: none;
@@ -58,25 +76,23 @@
     .top-btn:hover, .top-btn:focus {
       background: var(--accent);
       color: var(--white);
-      box-shadow: 0 4px 24px #21d39788;
+      box-shadow: 0 4px 24px rgba(0, 206, 209, 0.3);
     }
     .btn-group {
       display: flex;
       flex-direction: column;
-      gap: 18px;
-      margin-top: 52px;
-      width: 96vw;
-      max-width: 480px;
+      gap: 24px;
+      width: 100%;
+      max-width: 600px;
+      align-items: center;
+      margin-top: 20px;
     }
     .btn-row {
       display: flex;
-      gap: 12px;
+      gap: 16px;
       justify-content: center;
       flex-wrap: wrap;
-    }
-    .btn-row .action-btn {
-      flex: 1 1 45%;
-      max-width: 200px;
+      width: 100%;
     }
     .action-btn {
       display: flex;
@@ -84,72 +100,71 @@
       justify-content: center;
       font-size: 1.1rem;
       font-weight: 500;
-      background: linear-gradient(90deg, #0377fc 0%, #21d397 100%);
+      background: var(--primary);
       color: var(--white);
       border: none;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 48px 0;
+      padding: 18px 30px;
       cursor: pointer;
-      transition: transform 0.14s cubic-bezier(.45,.1,.32,1.2), box-shadow 0.24s;
+      transition: transform 0.15s, box-shadow 0.3s, background-color 0.3s;
       text-decoration: none;
       outline: none;
-      gap: 14px;
+      gap: 12px;
+      max-width: 240px;
+      width: 100%;
       position: relative;
       overflow: hidden;
+    }
+    .action-btn:hover, .action-btn:focus {
+      transform: scale(1.05);
+      background-color: var(--accent);
+      box-shadow: 0 8px 24px rgba(0, 206, 209, 0.3);
     }
     .action-btn::before {
       content: "";
       position: absolute;
       z-index: 1;
-      left: -56px;
+      left: -100px;
       top: 0;
-      width: 40px;
+      width: 50px;
       height: 100%;
-      background: rgba(255,255,255,0.12);
-      transform: skewX(-24deg);
-      animation: btnShine 2.7s infinite linear;
-      opacity: 0.7;
+      background: var(--highlight);
+      transform: skewX(-20deg);
+      animation: btnShine 3s infinite linear;
+      opacity: 0.6;
     }
     @keyframes btnShine {
-      0% { left: -56px; }
-      100% { left: 110%; }
-    }
-    .action-btn span {
-      position: relative;
-      z-index: 2;
-    }
-    .action-btn:hover, .action-btn:active, .action-btn:focus {
-      transform: translateY(-2px) scale(1.03);
-      box-shadow: 0 12px 38px 0 rgba(33, 211, 151, 0.28);
-      outline: none;
+      0% { left: -100px; }
+      100% { left: 100%; }
     }
     .icon {
-      width: 26px;
-      height: 26px;
-      margin-right: 8px;
-      filter: drop-shadow(0 2px 8px rgba(3,119,252,0.12));
+      width: 28px;
+      height: 28px;
+    }
+    .icon path {
+      fill: var(--white);
     }
     @media (max-width: 600px) {
-      .btn-group {
-        margin-top: 40px;
-        gap: 14px;
-        max-width: 98vw;
+      body {
+        padding: 10px;
+      }
+      header {
+        padding: 20px 0;
       }
       h1 {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
+      }
+      .btn-group {
+        margin-top: 20px;
+        gap: 16px;
+        width: 90%;
       }
       .top-btn {
         position: static;
-        margin: 0 0 14px 0;
-        width: 92vw;
-        max-width: 320px;
-        left: unset;
-        top: unset;
-        font-size: 0.93rem;
-      }
-      header {
-        padding: 22px 0 12px 0;
+        margin-bottom: 16px;
+        font-size: 1rem;
+        width: 100%;
       }
     }
   </style>
@@ -167,16 +182,15 @@
       <div class="btn-row">
         <a class="action-btn" href="tel:+917893845696">
           <svg class="icon" fill="none" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="12" fill="#21d397"/>
+            <circle cx="12" cy="12" r="12" fill="#00CED1"/>
             <path d="M16 13l-2.5.5a8.2 8.2 0 01-3-3L11 8c.2-.4.1-.9-.3-1.1l-2-1.2A1 1 0 007 6.8C7 13 11 17 17.2 17c.3 0 .7-.2.9-.6l1-2a1 1 0 00-.5-1.3l-2.9-1.1a1 1 0 00-1.5 1.1z" fill="#fff"/>
           </svg>
           <span>Call</span>
         </a>
-
         <a class="action-btn" href="https://maps.app.goo.gl/VfZ4fHYw6nYFTavB6" target="_blank" rel="noopener">
           <svg class="icon" fill="none" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="12" fill="#0377fc"/>
-            <path d="M12 6c-2.5 0-4.5 2-4.5 4.7 0 3.5 3.8 6.6 4 6.8.2.2.6.2.8 0 0 0 4-3.2 4-6.8C16.5 8 14.5 6 12 6zm0 6.2c-.8 0-1.5-.7-1.5-1.5S11.2 9.2 12 9.2s1.5.7 1.5 1.5-.7 1.5-1.5 1.5z" fill="#fff"/>
+            <circle cx="12" cy="12" r="12" fill="#1E90FF"/>
+            <path d="M12 6c-2.5 0-4.5 2-4.5 4.7 0 3.5 3.8 6.6 4 6.8.2.2.6.2.8 0 0 0 4-3.2 4-6.8C1            4-3.2 4-6.8C16.5 8 14.5 6 12 6zm0 6.2c-.8 0-1.5-.7-1.5-1.5S11.2 9.2 12 9.2s1.5.7 1.5 1.5-.7 1.5-1.5 1.5z" fill="#fff"/>
           </svg>
           <span>Get Directions</span>
         </a>
@@ -184,14 +198,12 @@
 
       <div class="btn-row">
         <a class="action-btn" href="https://wa.me/7893845696" target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="none">
+          <svg class="icon" fill="none" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="12" fill="#25D366"/>
             <path d="M16.2 13.7c-.2-.1-1.2-.6-1.4-.7-.2-.1-.4-.2-.6.2-.2.3-.6.7-.8.8-.1.1-.3.1-.5 0-.3-.1-1.1-.4-2.1-1.4-.8-.8-1.4-1.8-1.6-2.1-.1-.2 0-.4.1-.5.1-.1.2-.2.3-.4.1-.1.2-.2.3-.3.1-.1.1-.2.2-.4.1-.2 0-.3-.1-.4-.1-.1-1.4-1.4-1.6-1.5-.2-.1-.4-.2-.5-.2s-.3 0-.5.1c-.2.2-.9.8-.9 2 .1 1.7 1.8 3.6 2.2 4 .3.3.7.6 1.1.9.8.6 2.5 1.4 3.3 1.4.7 0 1.2-.4 1.4-.7.2-.3.9-1 .4-1.2z" fill="#FFF"/>
           </svg>
-
           <span>WhatsApp</span>
         </a>
-
         <a class="action-btn" href="https://www.instagram.com/ksdigitalservice/" target="_blank" rel="noopener">
           <svg class="icon" viewBox="0 0 24 24" fill="none">
             <circle cx="12" cy="12" r="12" fill="#e1306c"/>
@@ -221,8 +233,8 @@
           <span>Self Printer</span>
         </a>
       </div>
-
     </div>
   </main>
 </body>
 </html>
+
