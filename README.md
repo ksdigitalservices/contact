@@ -182,7 +182,6 @@ h2 {
   font-size: 14px;
   color: #444;
   position: relative;
-  border-left: 1px solid #3498db;
   text-align: left;
   width: 100%;
   box-sizing: border-box;
@@ -284,7 +283,7 @@ footer {
   }
   
   .offerings-list li {
-    padding: 9px 10px 9px 10px;
+    padding: 9px 10px 9px 5px;
     font-size: 15px;
     text-align: left;
   }
@@ -319,7 +318,7 @@ footer {
   
   .offerings-list li {
     font-size: 12px;
-    padding-left: 10px;
+    padding-left: 5px;
      text-align: left;
   }
   
