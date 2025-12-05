@@ -277,7 +277,8 @@ footer {
   }
   
   h1 {
-    font-size: 22px;
+    font-size: 18px;
+     text-align: left;
   }
   
   .button-row-1, .button-row-2 {
@@ -291,7 +292,8 @@ footer {
   
   .offerings-list li {
     padding: 9px 10px 9px 35px;
-    font-size: 13px;
+    font-size: 15px;
+     text-align: left;
   }
   
   .section-title {
@@ -309,7 +311,8 @@ footer {
 
 @media (max-width: 350px) {
   h1 {
-    font-size: 22px;
+    font-size: 18px;
+     text-align: left;
   }
   
   .button-row-1, .button-row-2 {
@@ -318,12 +321,13 @@ footer {
   
   .action-btn {
     padding: 8px 4px;
-    font-size: 12px;
+    font-size: 18px;
   }
   
   .offerings-list li {
     font-size: 12px;
     padding-left: 30px;
+     text-align: left;
   }
   
   .offerings-list li::before {
