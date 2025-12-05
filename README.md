@@ -191,7 +191,7 @@ h1 {
 .offerings-list li::before {
   content: '✓';
   position: absolute;
-  left: 15px;
+  left: 10px;
   color: #27ae60;
   font-weight: bold;
   font-size: 14px;
@@ -277,7 +277,7 @@ footer {
   }
   
   h1 {
-    font-size: 18px;
+    font-size: 14px;
      text-align: left;
   }
   
@@ -291,9 +291,10 @@ footer {
   }
   
   .offerings-list li {
-    padding: 9px 10px 9px 35px;
+    padding: 9px 10px 9px 20px;
     font-size: 15px;
-     text-align: left;
+    text-align: left;
+    left: 5px;
   }
   
   .section-title {
@@ -331,7 +332,7 @@ footer {
   }
   
   .offerings-list li::before {
-    left: 10px;
+    left: 5px;
   }
 }
 
