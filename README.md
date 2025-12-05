@@ -1,324 +1,331 @@
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>KS DIGITAL SERVICES</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-/* Elegant Color Palette */
-:root {
-  --primary: #2c3e50;
-  --secondary: #3498db;
-  --accent: #e74c3c;
-  --gold: #d4af37;
-  --light: #f8f9fa;
-  --dark: #1a1a2e;
-  --gray: #6c757d;
-  --radius: 8px;
-  --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-/* Base Styles */
+/* Reset and Base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
   font-family: 'Inter', sans-serif;
-  background: #f8f9fa;
-  color: var(--dark);
-  line-height: 1.5;
+  background: #ffffff;
+  color: #333333;
+  line-height: 1.4;
   min-height: 100vh;
-  padding: 1rem;
+  padding: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Main Container */
 .container {
-  max-width: 900px;
+  max-width: 500px;
   margin: 0 auto;
-  background: white;
+  background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  padding: 1.5rem;
 }
 
-/* Title Section - Minimal Gap */
+/* Title - Minimal Gap */
 .title-section {
   text-align: center;
-  margin-bottom: 1rem; /* Reduced gap */
+  margin-bottom: 10px;
 }
 
 h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
   font-weight: 700;
-  color: var(--primary);
-  margin-bottom: 0.3rem; /* Very small gap */
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--gold);
-  display: inline-block;
+  color: #2c3e50;
+  margin-bottom: 5px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #3498db;
 }
 
-/* Main Page Button - Minimal Gap */
+/* Main Page Button - Very Small Gap */
 .main-page-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  background: #2ecc71;
+  justify-content: center;
+  gap: 8px;
+  background: #27ae60;
   color: white;
-  padding: 0.6rem 1.5rem;
-  border-radius: 6px;
+  padding: 10px 20px;
+  border-radius: 25px;
   text-decoration: none;
   font-weight: 500;
-  font-size: 0.9rem;
-  margin: 0; /* No margin */
-  transition: var(--transition);
+  font-size: 14px;
+  margin: 0;
+  transition: all 0.2s;
+  width: auto;
+  max-width: 180px;
 }
 
 .main-page-btn:hover {
-  background: #27ae60;
-  transform: translateY(-2px);
+  background: #219653;
+  transform: scale(1.02);
 }
 
-/* Contact Buttons Row - Single Line */
-.contact-buttons-row {
+/* SINGLE LINE BUTTONS - All 3 in one row */
+.contact-buttons-single-row {
   display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin: 1.5rem 0; /* Reduced margin */
-  flex-wrap: wrap;
+  gap: 8px;
+  margin: 15px 0 20px 0;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: nowrap; /* Prevent wrapping */
 }
 
-.contact-btn {
+/* Each button in the row */
+.single-btn {
   flex: 1;
-  min-width: 140px;
+  min-width: 0; /* Allow buttons to shrink */
   background: white;
   border: 1px solid #e0e0e0;
-  border-radius: var(--radius);
-  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  padding: 12px 8px;
   text-decoration: none;
-  color: var(--dark);
+  color: #333;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.8rem;
-  transition: var(--transition);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  justify-content: center;
+  transition: all 0.2s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  text-align: center;
 }
 
-.contact-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  border-color: var(--secondary);
+.single-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-.btn-icon {
-  width: 40px;
-  height: 40px;
+.btn-icon-small {
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
+  font-size: 14px;
   color: white;
-  flex-shrink: 0;
+  margin-bottom: 6px;
 }
 
-.btn-content h3 {
-  font-size: 0.95rem;
-  margin-bottom: 0.1rem;
-  color: var(--primary);
+.btn-text {
+  font-size: 11px;
   font-weight: 600;
+  color: #2c3e50;
+  line-height: 1.2;
+  word-wrap: break-word;
 }
 
-.btn-content p {
-  font-size: 0.8rem;
-  color: var(--gray);
+.btn-subtext {
+  font-size: 10px;
+  color: #666;
+  margin-top: 2px;
 }
 
-/* Color variations */
-.btn-call .btn-icon { background: #2ecc71; }
-.btn-maps .btn-icon { background: var(--secondary); }
-.btn-whatsapp .btn-icon { background: #25D366; }
+/* Button colors */
+.call-btn .btn-icon-small { background: #27ae60; }
+.maps-btn .btn-icon-small { background: #3498db; }
+.whatsapp-btn .btn-icon-small { background: #25D366; }
 
-/* Offerings List - Clean and Simple */
+/* Offerings List */
 .offerings-section {
-  margin: 2rem 0;
+  margin: 20px 0;
 }
 
-.offerings-section h2 {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.4rem;
-  color: var(--primary);
-  text-align: center;
-  margin-bottom: 1.2rem;
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
   font-weight: 600;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
 }
 
 .offerings-list {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 0.6rem;
+  grid-template-columns: 1fr;
+  gap: 8px;
 }
 
 .offerings-list li {
-  padding: 0.6rem 0.8rem;
+  padding: 10px 12px 10px 35px;
   background: #f8f9fa;
   border-radius: 6px;
-  font-size: 0.9rem;
-  color: var(--dark);
-  transition: var(--transition);
+  font-size: 14px;
+  color: #444;
   position: relative;
-  padding-left: 2.2rem;
-  border-left: 3px solid transparent;
-}
-
-.offerings-list li:hover {
-  background: #e9ecef;
-  border-left-color: var(--secondary);
+  border-left: 3px solid #3498db;
 }
 
 .offerings-list li::before {
-  content: '•';
+  content: '✓';
   position: absolute;
-  left: 0.8rem;
-  color: var(--secondary);
-  font-size: 1.2rem;
+  left: 12px;
+  color: #27ae60;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 /* Contact Info */
 .contact-info {
   background: #f8f9fa;
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  margin: 2rem 0;
-  text-align: center;
-  border-top: 2px solid var(--gold);
+  border-radius: 10px;
+  padding: 15px;
+  margin: 20px 0;
+  border-top: 2px solid #3498db;
 }
 
-.contact-info h2 {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.3rem;
-  color: var(--primary);
-  margin-bottom: 1rem;
+.contact-info h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #2c3e50;
+  margin-bottom: 12px;
+  text-align: center;
   font-weight: 600;
 }
 
 .contact-details {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 10px;
 }
 
 .contact-item {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  color: var(--gray);
-  font-size: 0.95rem;
+  gap: 10px;
+  color: #555;
+  font-size: 14px;
 }
 
 .contact-item i {
-  color: var(--secondary);
+  color: #3498db;
   width: 20px;
+  font-size: 14px;
 }
 
 .phone-number {
-  font-size: 1.1rem;
-  color: var(--primary);
+  font-size: 15px;
+  color: #2c3e50;
   font-weight: 600;
-  margin-top: 0.3rem;
+  margin-top: 5px;
 }
 
 /* Footer */
 footer {
   text-align: center;
-  padding: 1.5rem 1rem;
-  color: var(--gray);
-  font-size: 0.85rem;
-  background: var(--primary);
-  color: rgba(255, 255, 255, 0.85);
+  padding: 15px;
+  color: #666;
+  font-size: 12px;
+  background: #f8f9fa;
   border-radius: 8px;
-  margin-top: 1rem;
+  margin-top: 15px;
 }
 
-.footer-content {
-  max-width: 900px;
-  margin: 0 auto;
+.footer-content p {
+  margin-bottom: 5px;
 }
 
 .copyright {
-  margin-top: 0.8rem;
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.6);
+  font-size: 11px;
+  color: #888;
+  margin-top: 8px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  body {
-    padding: 0.5rem;
-  }
-  
-  .container {
-    padding: 1rem;
-  }
-  
-  h1 {
-    font-size: 2rem;
-  }
-  
-  .contact-buttons-row {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-  
-  .contact-btn {
-    width: 100%;
-    min-width: 100%;
-  }
-  
-  .offerings-list {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-  }
-  
-  .contact-info {
-    padding: 1.2rem;
-  }
-}
-
+/* Mobile-specific adjustments */
 @media (max-width: 480px) {
-  h1 {
-    font-size: 1.7rem;
+  body {
+    padding: 12px;
   }
   
-  .main-page-btn {
-    padding: 0.5rem 1.2rem;
-    font-size: 0.85rem;
+  h1 {
+    font-size: 22px;
+  }
+  
+  .contact-buttons-single-row {
+    gap: 6px;
+    margin: 12px 0 18px 0;
+  }
+  
+  .single-btn {
+    padding: 10px 6px;
+  }
+  
+  .btn-icon-small {
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+  }
+  
+  .btn-text {
+    font-size: 10px;
+  }
+  
+  .btn-subtext {
+    font-size: 9px;
   }
   
   .offerings-list li {
-    padding: 0.5rem 0.7rem;
-    padding-left: 2rem;
-    font-size: 0.85rem;
+    padding: 9px 10px 9px 32px;
+    font-size: 13px;
   }
   
-  .contact-btn {
-    padding: 0.7rem;
+  .main-page-btn {
+    padding: 9px 18px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 350px) {
+  h1 {
+    font-size: 20px;
   }
   
-  .btn-icon {
-    width: 36px;
-    height: 36px;
-    font-size: 0.9rem;
+  .contact-buttons-single-row {
+    gap: 4px;
   }
+  
+  .single-btn {
+    padding: 8px 4px;
+  }
+  
+  .btn-text {
+    font-size: 9px;
+  }
+  
+  .btn-subtext {
+    font-size: 8px;
+  }
+}
+
+/* Ensure no horizontal scroll on mobile */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Touch-friendly buttons */
+button, a {
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
 }
 </style>
 
@@ -330,49 +337,46 @@ footer {
   <div class="title-section">
     <h1>KS DIGITAL SERVICES</h1>
     
-    <!-- 2. Main Page Link Button - MINIMAL GAP -->
+    <!-- 2. Main Page Link Button - Minimal Gap -->
     <a class="main-page-btn" href="https://ksdigitalservice.pw/">
       <i class="fas fa-home"></i>
       Main Page
     </a>
   </div>
   
-  <!-- 3. Call, Get Directions, WhatsApp Buttons in SINGLE LINE -->
-  <div class="contact-buttons-row">
-    <a class="contact-btn btn-call" href="tel:+917893845696">
-      <div class="btn-icon">
+  <!-- 3. ALL 3 BUTTONS IN SINGLE LINE -->
+  <div class="contact-buttons-single-row">
+    <!-- Call Button -->
+    <a class="single-btn call-btn" href="tel:+917893845696">
+      <div class="btn-icon-small">
         <i class="fas fa-phone-alt"></i>
       </div>
-      <div class="btn-content">
-        <h3>Call Now</h3>
-        <p>+91 78938 45696</p>
-      </div>
+      <div class="btn-text">Call Now</div>
+      <div class="btn-subtext">7893845696</div>
     </a>
     
-    <a class="contact-btn btn-maps" href="https://maps.app.goo.gl/VfZ4fHYw6nYFTavB6" target="_blank">
-      <div class="btn-icon">
+    <!-- Maps Button -->
+    <a class="single-btn maps-btn" href="https://maps.app.goo.gl/VfZ4fHYw6nYFTavB6" target="_blank">
+      <div class="btn-icon-small">
         <i class="fas fa-map-marker-alt"></i>
       </div>
-      <div class="btn-content">
-        <h3>Get Directions</h3>
-        <p>Find Location</p>
-      </div>
+      <div class="btn-text">Get Directions</div>
+      <div class="btn-subtext">Location</div>
     </a>
     
-    <a class="contact-btn btn-whatsapp" href="https://wa.me/7893845696" target="_blank">
-      <div class="btn-icon">
+    <!-- WhatsApp Button -->
+    <a class="single-btn whatsapp-btn" href="https://wa.me/7893845696" target="_blank">
+      <div class="btn-icon-small">
         <i class="fab fa-whatsapp"></i>
       </div>
-      <div class="btn-content">
-        <h3>WhatsApp</h3>
-        <p>Chat with Us</p>
-      </div>
+      <div class="btn-text">WhatsApp</div>
+      <div class="btn-subtext">Chat Now</div>
     </a>
   </div>
   
-  <!-- 4. Offerings as a Clean List -->
+  <!-- 4. Offerings as a List -->
   <div class="offerings-section">
-    <h2>Our Services & Offerings</h2>
+    <h2 class="section-title">Our Services & Offerings</h2>
     <ul class="offerings-list">
       <li>FSSAI / Trade / Labor License</li>
       <li>GST Registration / Returns</li>
@@ -400,7 +404,7 @@ footer {
   
   <!-- 5. Contact Info -->
   <div class="contact-info">
-    <h2>Contact Information</h2>
+    <h3>Contact Information</h3>
     <div class="contact-details">
       <div class="contact-item">
         <i class="fas fa-clock"></i>
@@ -421,9 +425,9 @@ footer {
 <!-- 6. Footer -->
 <footer>
   <div class="footer-content">
-    <p>© 2025 KS Digital Services. All rights reserved.</p>
-    <p>Providing reliable digital solutions for businesses and individuals.</p>
-    <p class="copyright">Designed for our valued customers</p>
+    <p>© 2025 KS Digital Services</p>
+    <p>Providing reliable digital solutions</p>
+    <p class="copyright">Designed for mobile users</p>
   </div>
 </footer>
 
