@@ -284,7 +284,7 @@ footer {
   }
   
   .offerings-list li {
-    padding: 9px 10px 9px 20px;
+    padding: 9px 10px 9px 10px;
     font-size: 15px;
     text-align: left;
   }
@@ -319,7 +319,7 @@ footer {
   
   .offerings-list li {
     font-size: 12px;
-    padding-left: 20px;
+    padding-left: 10px;
      text-align: left;
   }
   
