@@ -48,7 +48,7 @@ body {
 
 h3 {
   font-family: 'Poppins', sans-serif;
-  font-size: 8px;
+  font-size: 12px;
   font-weight: 700;
   color: #2c3e50;
   margin-bottom: 8px;
@@ -270,7 +270,7 @@ footer {
   }
   
   h3 {
-    font-size: 8px;
+    font-size: 12px;
      text-align: left;
   }
   
@@ -304,7 +304,7 @@ footer {
 
 @media (max-width: 350px) {
   h3 {
-    font-size: 8px;
+    font-size: 12px;
      text-align: left;
   }
   
