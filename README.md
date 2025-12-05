@@ -169,6 +169,8 @@ h2 {
 
 .offerings-list {
   list-style: none;
+  margin: 0;
+  padding: 0; /* align perfectly with title */
   display: grid;
   grid-template-columns: 1fr;
   gap: 8px;
@@ -176,18 +178,14 @@ h2 {
 }
 
 .offerings-list li {
-  padding: 10px 12px 10px 10px;
+  padding: 10px 12px;
   background: #f8f9fa;
   border-radius: 6px;
   font-size: 14px;
   color: #444;
-  position: relative;
   text-align: left;
   width: 100%;
-  box-sizing: border-box;
 }
-
-
 
 /* Left-aligned Contact Info */
 .contact-info {
@@ -270,7 +268,7 @@ footer {
   
   h2 {
     font-size: 12px;
-     text-align: left;
+    text-align: left;
   }
   
   .button-row-1, .button-row-2 {
@@ -283,7 +281,6 @@ footer {
   }
   
   .offerings-list  {
-    padding: 9px 10px 9px 5px;
     font-size: 15px;
     text-align: left;
   }
@@ -304,7 +301,7 @@ footer {
 @media (max-width: 350px) {
   h2 {
     font-size: 12px;
-     text-align: left;
+    text-align: left;
   }
   
   .button-row-1, .button-row-2 {
@@ -318,11 +315,8 @@ footer {
   
   .offerings-list {
     font-size: 12px;
-    padding-left: 5px;
-     text-align: left;
+    text-align: left;
   }
-  
-
 }
 
 /* Ensure no overflow */
@@ -350,42 +344,32 @@ button, a {
 <body>
 
 <div class="container">
-  <!-- 1. KS DIGITAL SERVICES Title - Left aligned -->
+  <!-- KS DIGITAL SERVICES Title - Left aligned -->
   <div class="title-section">
     <h2>KS DIGITAL SERVICES</h2>
     
     <!-- First row: Main Page + Call Now -->
     <div class="button-row-1">
-      <!-- Main Page Button -->
       <a class="action-btn main-page-btn" href="https://ksdigitalservice.pw/">
-        <i class="fas fa-home"></i>
-        Main Page
+        <i class="fas fa-home"></i> Main Page
       </a>
-      
-      <!-- Call Now Button -->
       <a class="action-btn call-btn" href="tel:+917893845696">
-        <i class="fas fa-phone-alt"></i>
-        Call Now
+        <i class="fas fa-phone-alt"></i> Call Now
       </a>
     </div>
     
     <!-- Second row: Get Directions + WhatsApp -->
     <div class="button-row-2">
-      <!-- Get Directions Button -->
       <a class="action-btn maps-btn" href="https://maps.app.goo.gl/VfZ4fHYw6nYFTavB6" target="_blank">
-        <i class="fas fa-map-marker-alt"></i>
-        Get Directions
+        <i class="fas fa-map-marker-alt"></i> Get Directions
       </a>
-      
-      <!-- WhatsApp Button -->
       <a class="action-btn whatsapp-btn" href="https://wa.me/7893845696" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-        WhatsApp
+        <i class="fab fa-whatsapp"></i> WhatsApp
       </a>
     </div>
   </div>
   
-  <!-- 4. Offerings as a List - Left aligned -->
+  <!-- Offerings as a List - Left aligned -->
   <div class="offerings-section">
     <h2 class="section-title">Our Services & Offerings</h2>
     <ul class="offerings-list">
@@ -413,7 +397,7 @@ button, a {
     </ul>
   </div>
   
-  <!-- 5. Contact Info - Left aligned -->
+  <!-- Contact Info - Left aligned -->
   <div class="contact-info">
     <h3>Contact Information</h3>
     <div class="contact-details">
@@ -433,7 +417,7 @@ button, a {
   </div>
 </div>
 
-<!-- 6. Footer -->
+<!-- Footer -->
 <footer>
   <div class="footer-content">
     <p>© 2025 KS Digital Services</p>
