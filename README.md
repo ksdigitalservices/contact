@@ -176,26 +176,19 @@ h1 {
 }
 
 .offerings-list li {
-  padding: 10px 12px 10px 40px;
+  padding: 10px 12px 10px 10px;
   background: #f8f9fa;
   border-radius: 6px;
   font-size: 14px;
   color: #444;
   position: relative;
-  border-left: 3px solid #3498db;
+  border-left: 1px solid #3498db;
   text-align: left;
   width: 100%;
   box-sizing: border-box;
 }
 
-.offerings-list li::before {
-  content: '✓';
-  position: absolute;
-  left: 10px;
-  color: #27ae60;
-  font-weight: bold;
-  font-size: 14px;
-}
+
 
 /* Left-aligned Contact Info */
 .contact-info {
