@@ -152,7 +152,7 @@ h2 {
 .offerings-section {
   margin: 20px 0;
   width: 100%;
-  padding: 0 5px;
+  padding: 0 5px; /* Match the same padding as title-section */
 }
 
 .section-title {
@@ -165,12 +165,14 @@ h2 {
   padding-bottom: 5px;
   border-bottom: 2px solid #3498db;
   width: 100%;
+  padding-left: 0; /* Remove any left padding */
+  margin-left: 0; /* Remove any left margin */
 }
 
 .offerings-list {
   list-style: none;
   margin: 0;
-  padding: 0; /* align perfectly with title */
+  padding: 0; /* Remove all padding to align with title */
   display: grid;
   grid-template-columns: 1fr;
   gap: 8px;
@@ -185,6 +187,8 @@ h2 {
   color: #444;
   text-align: left;
   width: 100%;
+  padding-left: 0; /* Align text with section title */
+  margin-left: 0; /* Remove any margin */
 }
 
 /* Left-aligned Contact Info */
@@ -280,13 +284,15 @@ footer {
     font-size: 18px;
   }
   
-  .offerings-list  {
+  .offerings-list li {
     font-size: 15px;
     text-align: left;
+    padding-left: 0; /* Ensure alignment on mobile */
   }
   
   .section-title {
     font-size: 18px;
+    padding-left: 0; /* Ensure alignment on mobile */
   }
   
   .main-page-btn {
@@ -313,9 +319,14 @@ footer {
     font-size: 18px;
   }
   
-  .offerings-list {
+  .offerings-list li {
     font-size: 12px;
     text-align: left;
+    padding-left: 0; /* Ensure alignment on small screens */
+  }
+  
+  .section-title {
+    padding-left: 0; /* Ensure alignment on small screens */
   }
 }
 
