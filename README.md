@@ -61,7 +61,7 @@ h1 {
 .button-row-1 {
   display: flex;
   gap: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   width: 100%;
   flex-wrap: nowrap;
 }
@@ -291,7 +291,7 @@ footer {
   }
   
   .offerings-list li {
-    padding: 9px 10px 9px 9px;
+    padding: 9px 10px 9px 20px;
     font-size: 15px;
     text-align: left;
   }
@@ -311,7 +311,7 @@ footer {
 
 @media (max-width: 350px) {
   h1 {
-    font-size: 18px;
+    font-size: 12px;
      text-align: left;
   }
   
@@ -326,7 +326,7 @@ footer {
   
   .offerings-list li {
     font-size: 12px;
-    padding-left: 30px;
+    padding-left: 20px;
      text-align: left;
   }
   
