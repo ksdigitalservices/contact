@@ -48,7 +48,7 @@ body {
 
 h1 {
   font-family: 'Poppins', sans-serif;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 700;
   color: #2c3e50;
   margin-bottom: 8px;
