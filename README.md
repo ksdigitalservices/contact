@@ -172,6 +172,7 @@ h2 {
 .offerings-list {
   list-style: none;
   margin: 0;
+  
   padding-left: 0;   /* removed default UL indent */
   width: 100%;
   display: grid;
@@ -181,7 +182,7 @@ h2 {
 
 .offerings-list li {
   padding: 10px 15px;
-  background: #f8f9fa;
+  background: #D4CFD5;
   border-radius: 6px;
   font-size: 14px;
   color: #444;
@@ -294,6 +295,7 @@ footer {
     text-align: left;
     padding: 10px 15px;
     margin-left: 0;
+    background: #D4CFD5;
   }
   
   .main-page-btn {
@@ -330,6 +332,7 @@ footer {
     text-align: left;
     padding: 10px 15px;
     margin-left: 0;
+    background: #D4CFD5;
   }
 }
 
