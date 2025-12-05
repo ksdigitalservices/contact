@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KS DIGITAL SERVICES</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -25,71 +25,60 @@ body {
   padding: 15px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* Main Container */
 .container {
-  max-width: 500px;
+  max-width: 100%;
   margin: 0 auto;
   background: #ffffff;
-  border-radius: 12px;
   overflow: hidden;
+  width: 100%;
 }
 
-/* Title - Minimal Gap */
+/* Left-aligned Title */
 .title-section {
-  text-align: center;
-  margin-bottom: 10px;
+  text-align: left;
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 0 5px;
 }
 
 h1 {
   font-family: 'Poppins', sans-serif;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
   color: #2c3e50;
-  margin-bottom: 5px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid #3498db;
-}
-
-/* Main Page Button - Very Small Gap */
-.main-page-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background: #27ae60;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 14px;
-  margin: 0;
-  transition: all 0.2s;
-  width: auto;
-  max-width: 180px;
-}
-
-.main-page-btn:hover {
-  background: #219653;
-  transform: scale(1.02);
-}
-
-/* SINGLE LINE BUTTONS - All 3 in one row */
-.contact-buttons-single-row {
-  display: flex;
-  gap: 8px;
-  margin: 15px 0 20px 0;
-  justify-content: space-between;
+  margin-bottom: 8px;
+  text-align: left;
+  border-bottom: none;
   width: 100%;
-  flex-wrap: nowrap; /* Prevent wrapping */
 }
 
-/* Each button in the row */
-.single-btn {
+/* First row buttons: Main Page + Call Now */
+.button-row-1 {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+/* Second row buttons: Get Directions + WhatsApp */
+.button-row-2 {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+/* Button styles */
+.action-btn {
   flex: 1;
-  min-width: 0; /* Allow buttons to shrink */
+  min-width: 0;
   background: white;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
@@ -97,64 +86,85 @@ h1 {
   text-decoration: none;
   color: #333;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   transition: all 0.2s;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
   text-align: center;
+  font-size: 14px;
+  font-weight: 500;
 }
 
-.single-btn:active {
+.action-btn:active {
   transform: scale(0.98);
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-.btn-icon-small {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
+/* Main Page button specific */
+.main-page-btn {
+  background: #27ae60;
   color: white;
-  margin-bottom: 6px;
+  border: none;
+  padding: 12px 15px;
 }
 
-.btn-text {
-  font-size: 11px;
-  font-weight: 600;
+.main-page-btn i {
+  margin-right: 5px;
+}
+
+/* Call Now button specific */
+.call-btn {
+  background: #f0f9ff;
+  border-color: #3498db;
   color: #2c3e50;
-  line-height: 1.2;
-  word-wrap: break-word;
 }
 
-.btn-subtext {
-  font-size: 10px;
-  color: #666;
-  margin-top: 2px;
+.call-btn i {
+  color: #27ae60;
+  margin-right: 5px;
 }
 
-/* Button colors */
-.call-btn .btn-icon-small { background: #27ae60; }
-.maps-btn .btn-icon-small { background: #3498db; }
-.whatsapp-btn .btn-icon-small { background: #25D366; }
+/* Maps button specific */
+.maps-btn {
+  background: #f0f9ff;
+  border-color: #3498db;
+  color: #2c3e50;
+}
 
-/* Offerings List */
+.maps-btn i {
+  color: #3498db;
+  margin-right: 5px;
+}
+
+/* WhatsApp button specific */
+.whatsapp-btn {
+  background: #f0f9ff;
+  border-color: #25D366;
+  color: #2c3e50;
+}
+
+.whatsapp-btn i {
+  color: #25D366;
+  margin-right: 5px;
+}
+
+/* Left-aligned Offerings */
 .offerings-section {
   margin: 20px 0;
+  width: 100%;
+  padding: 0 5px;
 }
 
 .section-title {
   font-family: 'Poppins', sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   color: #2c3e50;
-  text-align: center;
+  text-align: left;
   margin-bottom: 15px;
   padding-bottom: 5px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 2px solid #3498db;
+  width: 100%;
 }
 
 .offerings-list {
@@ -162,42 +172,48 @@ h1 {
   display: grid;
   grid-template-columns: 1fr;
   gap: 8px;
+  width: 100%;
 }
 
 .offerings-list li {
-  padding: 10px 12px 10px 35px;
+  padding: 10px 12px 10px 40px;
   background: #f8f9fa;
   border-radius: 6px;
   font-size: 14px;
   color: #444;
   position: relative;
   border-left: 3px solid #3498db;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .offerings-list li::before {
   content: '✓';
   position: absolute;
-  left: 12px;
+  left: 15px;
   color: #27ae60;
   font-weight: bold;
   font-size: 14px;
 }
 
-/* Contact Info */
+/* Left-aligned Contact Info */
 .contact-info {
   background: #f8f9fa;
   border-radius: 10px;
   padding: 15px;
   margin: 20px 0;
   border-top: 2px solid #3498db;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .contact-info h3 {
   font-family: 'Poppins', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   color: #2c3e50;
   margin-bottom: 12px;
-  text-align: center;
+  text-align: left;
   font-weight: 600;
 }
 
@@ -205,20 +221,23 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  text-align: left;
 }
 
 .contact-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   color: #555;
   font-size: 14px;
+  text-align: left;
 }
 
 .contact-item i {
   color: #3498db;
   width: 20px;
   font-size: 14px;
+  flex-shrink: 0;
 }
 
 .phone-number {
@@ -237,6 +256,8 @@ footer {
   background: #f8f9fa;
   border-radius: 8px;
   margin-top: 15px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .footer-content p {
@@ -256,69 +277,64 @@ footer {
   }
   
   h1 {
-    font-size: 22px;
+    font-size: 24px;
   }
   
-  .contact-buttons-single-row {
-    gap: 6px;
-    margin: 12px 0 18px 0;
+  .button-row-1, .button-row-2 {
+    gap: 8px;
   }
   
-  .single-btn {
+  .action-btn {
     padding: 10px 6px;
-  }
-  
-  .btn-icon-small {
-    width: 30px;
-    height: 30px;
     font-size: 13px;
-  }
-  
-  .btn-text {
-    font-size: 10px;
-  }
-  
-  .btn-subtext {
-    font-size: 9px;
   }
   
   .offerings-list li {
-    padding: 9px 10px 9px 32px;
+    padding: 9px 10px 9px 35px;
     font-size: 13px;
   }
   
+  .section-title {
+    font-size: 18px;
+  }
+  
   .main-page-btn {
-    padding: 9px 18px;
-    font-size: 13px;
+    padding: 10px 12px;
+  }
+  
+  .contact-info h3 {
+    font-size: 16px;
   }
 }
 
 @media (max-width: 350px) {
   h1 {
-    font-size: 20px;
+    font-size: 22px;
   }
   
-  .contact-buttons-single-row {
-    gap: 4px;
+  .button-row-1, .button-row-2 {
+    gap: 6px;
   }
   
-  .single-btn {
+  .action-btn {
     padding: 8px 4px;
+    font-size: 12px;
   }
   
-  .btn-text {
-    font-size: 9px;
+  .offerings-list li {
+    font-size: 12px;
+    padding-left: 30px;
   }
   
-  .btn-subtext {
-    font-size: 8px;
+  .offerings-list li::before {
+    left: 10px;
   }
 }
 
-/* Ensure no horizontal scroll on mobile */
-html, body {
+/* Ensure no overflow */
+html, body, .container, .title-section, .offerings-section, .contact-info {
+  max-width: 100%;
   overflow-x: hidden;
-  width: 100%;
 }
 
 /* Touch-friendly buttons */
@@ -327,54 +343,55 @@ button, a {
   -webkit-user-select: none;
   user-select: none;
 }
+
+/* Clear any floating elements */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 </style>
 
 </head>
 <body>
 
 <div class="container">
-  <!-- 1. KS DIGITAL SERVICES Title -->
+  <!-- 1. KS DIGITAL SERVICES Title - Left aligned -->
   <div class="title-section">
     <h1>KS DIGITAL SERVICES</h1>
     
-    <!-- 2. Main Page Link Button - Minimal Gap -->
-    <a class="main-page-btn" href="https://ksdigitalservice.pw/">
-      <i class="fas fa-home"></i>
-      Main Page
-    </a>
-  </div>
-  
-  <!-- 3. ALL 3 BUTTONS IN SINGLE LINE -->
-  <div class="contact-buttons-single-row">
-    <!-- Call Button -->
-    <a class="single-btn call-btn" href="tel:+917893845696">
-      <div class="btn-icon-small">
+    <!-- First row: Main Page + Call Now -->
+    <div class="button-row-1">
+      <!-- Main Page Button -->
+      <a class="action-btn main-page-btn" href="https://ksdigitalservice.pw/">
+        <i class="fas fa-home"></i>
+        Main Page
+      </a>
+      
+      <!-- Call Now Button -->
+      <a class="action-btn call-btn" href="tel:+917893845696">
         <i class="fas fa-phone-alt"></i>
-      </div>
-      <div class="btn-text">Call Now</div>
-      <div class="btn-subtext">7893845696</div>
-    </a>
+        Call Now
+      </a>
+    </div>
     
-    <!-- Maps Button -->
-    <a class="single-btn maps-btn" href="https://maps.app.goo.gl/VfZ4fHYw6nYFTavB6" target="_blank">
-      <div class="btn-icon-small">
+    <!-- Second row: Get Directions + WhatsApp -->
+    <div class="button-row-2">
+      <!-- Get Directions Button -->
+      <a class="action-btn maps-btn" href="https://maps.app.goo.gl/VfZ4fHYw6nYFTavB6" target="_blank">
         <i class="fas fa-map-marker-alt"></i>
-      </div>
-      <div class="btn-text">Get Directions</div>
-      <div class="btn-subtext">Location</div>
-    </a>
-    
-    <!-- WhatsApp Button -->
-    <a class="single-btn whatsapp-btn" href="https://wa.me/7893845696" target="_blank">
-      <div class="btn-icon-small">
+        Get Directions
+      </a>
+      
+      <!-- WhatsApp Button -->
+      <a class="action-btn whatsapp-btn" href="https://wa.me/7893845696" target="_blank">
         <i class="fab fa-whatsapp"></i>
-      </div>
-      <div class="btn-text">WhatsApp</div>
-      <div class="btn-subtext">Chat Now</div>
-    </a>
+        WhatsApp
+      </a>
+    </div>
   </div>
   
-  <!-- 4. Offerings as a List -->
+  <!-- 4. Offerings as a List - Left aligned -->
   <div class="offerings-section">
     <h2 class="section-title">Our Services & Offerings</h2>
     <ul class="offerings-list">
@@ -402,7 +419,7 @@ button, a {
     </ul>
   </div>
   
-  <!-- 5. Contact Info -->
+  <!-- 5. Contact Info - Left aligned -->
   <div class="contact-info">
     <h3>Contact Information</h3>
     <div class="contact-details">
