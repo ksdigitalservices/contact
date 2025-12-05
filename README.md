@@ -172,11 +172,11 @@ h2 {
 .offerings-list {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding-left: 0;   /* removed default UL indent */
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr;
   gap: 8px;
-  width: 100%;
 }
 
 .offerings-list li {
