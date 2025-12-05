@@ -1,255 +1,514 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KS DIGITAL SERVICES</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #00e5ff; /* Neon Blue */
-      --accent: #ff4081;  /* Neon Pink */
-      --bg-dark: #121212; /* Dark Background */
-      --white: #fff;
-      --radius: 12px;
-      --shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
-      --glow: rgba(0, 229, 255, 0.3);
-    }
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Montserrat', Arial, sans-serif;
-      background: linear-gradient(135deg, #121212 0%, #222222 100%);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      overflow: hidden;
-      position: relative;
-    }
-    
-    /* 3D Particle Animation Background */
-    .particle-background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle, rgba(0, 0, 0, 0.5), transparent);
-      z-index: -1;
-      animation: particleMovement 5s infinite alternate;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KS DIGITAL SERVICES</title>
 
-    @keyframes particleMovement {
-      0% {
-        transform: translate3d(0, 0, 0);
-      }
-      100% {
-        transform: translate3d(50%, -50%, 0);
-      }
-    }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    header {
-      width: 100%;
-      padding: 40px 0;
-      background: #1e1e1e;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-      position: relative;
-    }
-    
-    h1 {
-      color: var(--white);
-      font-size: 2.8rem;
-      font-weight: 700;
-      margin: 0;
-      letter-spacing: 1px;
-      text-shadow: 0 0 8px var(--primary), 0 0 16px var(--primary);
-    }
-    
-    .top-btn {
-      position: absolute;
-      left: 30px;
-      top: 36px;
-      padding: 10px 20px;
-      background: var(--primary);
-      color: var(--white);
-      border: none;
-      border-radius: var(--radius);
-      font-size: 1rem;
-      font-weight: 600;
-      box-shadow: var(--shadow);
-      text-decoration: none;
-      transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
-      cursor: pointer;
-    }
+<style>
+/* Elegant Color Palette */
+:root {
+  --primary: #2c3e50;
+  --secondary: #3498db;
+  --accent: #e74c3c;
+  --gold: #d4af37;
+  --light: #f8f9fa;
+  --dark: #1a1a2e;
+  --gray: #6c757d;
+  --radius: 12px;
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
 
-    .top-btn:hover {
-      background: var(--accent);
-      box-shadow: 0 4px 20px rgba(255, 64, 129, 0.5);
-      transform: translateY(-3px);
-    }
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    main {
-      width: 100%;
-      padding: 40px 10px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  color: var(--dark);
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
 
-    .btn-group {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      margin-top: 40px;
-      width: 100%;
-      max-width: 480px;
-    }
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(52, 152, 219, 0.03) 0%, transparent 20%),
+    radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.03) 0%, transparent 20%);
+  z-index: -1;
+}
 
-    .btn-row {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
+/* Header */
+header {
+  background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  color: white;
+  padding: 2.5rem 1rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-bottom: 4px solid var(--gold);
+}
 
-    .action-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      font-weight: 500;
-      background: linear-gradient(45deg, var(--primary), var(--accent));
-      color: var(--white);
-      border: none;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 24px;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.4s ease;
-      text-decoration: none;
-      position: relative;
-    }
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
 
-    .action-btn::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -200%;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.15);
-      transform: skewX(-45deg);
-      animation: buttonShine 2.5s infinite linear;
-    }
+.logo-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
 
-    @keyframes buttonShine {
-      0% { left: -200%; }
-      100% { left: 100%; }
-    }
+.logo-icon i {
+  font-size: 1.8rem;
+  color: var(--primary);
+}
 
-    .action-btn:hover {
-      transform: translateY(-6px) scale(1.05);
-      box-shadow: 0 12px 36px rgba(255, 64, 129, 0.6);
-    }
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+}
 
-    .icon {
-      width: 24px;
-      height: 24px;
-      margin-right: 12px;
-      filter: drop-shadow(0 2px 10px rgba(0, 229, 255, 0.3));
-    }
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--gold);
+  border-radius: 2px;
+}
 
-    /* Responsive Design */
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 1.6rem;
-      }
-      .top-btn {
-        position: static;
-        margin-top: 20px;
-        width: 90%;
-        max-width: 320px;
-      }
-      .btn-group {
-        gap: 10px;
-      }
-      .btn-row {
-        flex-direction: column;
-        gap: 12px;
-      }
-    }
-  </style>
+.tagline {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+/* Home Button */
+.home-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: var(--transition);
+}
+
+.home-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Content */
+main {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+.content-wrapper {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.content-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--gold));
+}
+
+/* Services Section */
+.services-intro {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.services-intro h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 0.8rem;
+}
+
+.services-intro p {
+  color: var(--gray);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Buttons Grid */
+.buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.action-btn {
+  background: white;
+  border: 1px solid #eaeaea;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-decoration: none;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.action-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+  border-color: var(--secondary);
+}
+
+.action-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--secondary);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.action-btn:hover::before {
+  opacity: 1;
+}
+
+.btn-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: white;
+  flex-shrink: 0;
+}
+
+.btn-content {
+  flex-grow: 1;
+}
+
+.btn-content h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  color: var(--primary);
+}
+
+.btn-content p {
+  font-size: 0.85rem;
+  color: var(--gray);
+  line-height: 1.4;
+}
+
+.arrow-icon {
+  color: var(--gray);
+  font-size: 1rem;
+  transition: transform 0.3s;
+}
+
+.action-btn:hover .arrow-icon {
+  transform: translateX(5px);
+  color: var(--secondary);
+}
+
+/* Color variations for buttons */
+.btn-call .btn-icon { background: var(--secondary); }
+.btn-directions .btn-icon { background: #2ecc71; }
+.btn-whatsapp .btn-icon { background: #25D366; }
+.btn-instagram .btn-icon { background: #E1306C; }
+.btn-youtube .btn-icon { background: #FF0000; }
+.btn-printer .btn-icon { background: var(--gold); }
+
+/* Contact Info */
+.contact-info {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+  text-align: center;
+}
+
+.contact-info p {
+  color: var(--gray);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.phone-number {
+  font-size: 1.3rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--gray);
+  font-size: 0.9rem;
+  background: var(--primary);
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 3rem;
+}
+
+.footer-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.copyright {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .home-btn {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-bottom: 1.5rem;
+    display: inline-flex;
+  }
+  
+  .content-wrapper {
+    padding: 1.8rem;
+  }
+  
+  .buttons-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .logo-icon {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.7rem;
+  }
+  
+  .tagline {
+    font-size: 1rem;
+  }
+  
+  .action-btn {
+    padding: 1.2rem;
+  }
+}
+
+/* Animation for page load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content-wrapper, header {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+</style>
+
 </head>
-
 <body>
-  <div class="particle-background"></div> <!-- 3D particle background -->
-  <header>
+
+<header>
+  <div class="logo-container">
+
     <h1>KS DIGITAL SERVICES</h1>
-    <a class="top-btn" href="https://ksdigitalservice.pw/">HOME PAGE</a>
-  </header>
+  </div>
+  
+  <a class="home-btn" href="https://ksdigitalservice.pw/">
+    <i class="fas fa-home"></i>
+    Home Page
+  </a>
+</header>
 
-  <main>
-    <div class="btn-group">
-      <div class="btn-row">
-        <a class="action-btn" href="tel:+917893845696">
-          <svg class="icon" fill="none" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="12" fill="#00e5ff"/>
-            <path d="M16 13l-2.5.5a8.2 8.2 0 01-3-3L11 8c.2-.4.1-.9-.3-1.1l-2-1.2A1 1 0 007 6.8C7 13 11 17 17.2 17c.3 0 .7-.2.9-.6l1-2a1 1 0 00-.5-1.3l-2.9-1.1a1 1 0 00-1.5 1.1z" fill="#fff"/>
-          </svg>
-          <span>Call</span>
-        </a>
-
-        <a class="action-btn" href="https://maps.app.goo.gl/VfZ4fHYw6nYFTavB6" target="_blank" rel="noopener">
-          <svg class="icon" fill="none" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="12" fill="#ff4081"/>
-            <path d="M12 6c-2.5 0-4.5 2-4.5 4.7 0 3.5 3.8 6.6 4 6.8.2.2.6.2.8 0 0 0 4-3.2 4-6.8C16.5 8 14.5 6 12 6zm0 6.2c-.8 0-1.5-.7-1.5-1.5S11.2 9.2 12 9.2s1.5.7 1.5 1.5-.7 1.5-1.5 1.5z" fill="#fff"/>
-          </svg>
-          <span>Get Directions</span>
-        </a>
-      </div>
-
-      <div class="btn-row">
-        <a class="action-btn" href="https://wa.me/7893845696" target="_blank" rel="noopener">
-          <svg class="icon" fill="none" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="12" fill="#25D366"/>
-            <path d="M16.2 13.7c-.2-.1-1.2-.6-1.4-.7-.2-.1-.4-.2-.6.2-.2.3-.6.7-.8.8-.1.1-.3.1-.5 0-.3-.1-1.1-.4-2.1-1.4-.8-.8-1.4-1.8-1.6-2.1-.1-.2 0-.4.1-.5.1-.1.2-.2.3-.4.1-.1.2-.2.3-.3.1-.1.1-.2.2-.4.1-.2 0-.3-.1-.4-.1-.1-1.4-1.4-1.6-1.5-.2-.1-.4-.2-.5-.2s-.3 0-.5.1c-.2.2-.9.8-.9 2 .1 1.7 1.8 3.6 2.2 4 .3.3.7.6 1.1.9.8.6 2.5 1.4 3.3 1.4.7 0 1.2-.4 1.4-.7.2-.3.9-1 .4-1.2z" fill="#FFF"/>
-          </svg>
-          <span>WhatsApp</span>
-        </a>
-        
-        
-         <a class="action-btn" href="https://www.instagram.com/ksdigitalservice/" target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="12" fill="#e1306c"/>
-            <rect x="6.6" y="6.6" width="10.8" height="10.8" rx="3.2" fill="#fff"/>
-            <circle cx="12" cy="12" r="3" fill="#e1306c"/>
-            <circle cx="15.4" cy="8.8" r="0.8" fill="#e1306c"/>
-          </svg>
-          <span>Instagram</span>
-        </a>
-      </div>
-
-      <div class="btn-row">
-        <a class="action-btn" href="https://www.youtube.com/@ksdigitalservice" target="_blank" rel="noopener">
-          <svg class="icon" fill="none" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="12" fill="#ff0000"/>
-            <polygon points="10,8 16,12 10,16" fill="#fff"/>
-          </svg>
-          <span>YouTube</span>
-        </a>
-
-        <a class="action-btn" href="https://ksdigitalservice.pw/print/1" target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="12" fill="#3b82f6"/>
-            <rect x="7" y="10" width="10" height="7" rx="1" fill="#fff"/>
-            <rect x="9.5" y="7" width="5" height="4" rx="0.5" fill="#e5e7eb"/>
-          </svg>
-          <span>Self Printer</span>
-        </a>
-      </div>
+<main>
+  <div class="content-wrapper">
+    <div class="services-intro">
+      <h2>Connect With Us</h2>
+      
     </div>
-  </main>
+    
+    <div class="buttons-grid">
+      <!-- Call Button -->
+      <a class="action-btn btn-call" href="tel:+917893845696">
+        <div class="btn-icon">
+          <i class="fas fa-phone-alt"></i>
+        </div>
+        <div class="btn-content">
+          <h3>Call Now 7893845696</h3>
+          
+        </div>
+        <div class="arrow-icon">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </a>
+      
+      <!-- Directions Button -->
+      <a class="action-btn btn-directions" href="https://maps.app.goo.gl/VfZ4fHYw6nYFTavB6" target="_blank">
+        <div class="btn-icon">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <div class="btn-content">
+          <h3>Get Directions</h3>
+        </div>
+        <div class="arrow-icon">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </a>
+      
+      <!-- WhatsApp Button -->
+      <a class="action-btn btn-whatsapp" href="https://wa.me/7893845696" target="_blank">
+        <div class="btn-icon">
+          <i class="fab fa-whatsapp"></i>
+        </div>
+        <div class="btn-content">
+          <h3>WhatsApp</h3>
+        </div>
+        <div class="arrow-icon">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </a>
+      
+      <!-- Instagram Button -->
+      <a class="action-btn btn-instagram" href="https://www.instagram.com/ksdigitalservice/" target="_blank">
+        <div class="btn-icon">
+          <i class="fab fa-instagram"></i>
+        </div>
+        <div class="btn-content">
+          <h3>Instagram</h3>
+        </div>
+        <div class="arrow-icon">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </a>
+      
+      <!-- YouTube Button -->
+      <a class="action-btn btn-youtube" href="https://www.youtube.com/@ksdigitalservice" target="_blank">
+        <div class="btn-icon">
+          <i class="fab fa-youtube"></i>
+        </div>
+        <div class="btn-content">
+          <h3>YouTube Channel</h3>
+        </div>
+        <div class="arrow-icon">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </a>
+      
+      <!-- Self Printer Button 
+      <a class="action-btn btn-printer" href="https://ksdigitalservice.pw/print/1" target="_blank">
+        <div class="btn-icon">
+          <i class="fas fa-print"></i>
+        </div>
+        <div class="btn-content">
+          <h3>Self Printer Portal</h3>
+          <p>Access our online printing services and tools</p>
+        </div>
+        <div class="arrow-icon">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </a>
+      -->
+    </div>
+    
+    <div class="contact-info">
+      <p><i class="fas fa-clock"></i> Business Hours: 7:00 AM - 10:00 PM</p>
+      <p><i class="fas fa-envelope"></i> Email: ksdigital2025@gmail.com</p>
+      <p class="phone-number">
+        <i class="fas fa-phone"></i> +91 78938 45696
+      </p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-content">
+    <p>© 2025 KS Digital Services. All rights reserved.</p>
+    <p>Providing reliable digital solutions for businesses and individuals.</p>
+    <p class="copyright">Designed with <i class="fas fa-heart" style="color:#e74c3c;"></i> for our valued customers</p>
+  </div>
+</footer>
+
 </body>
 </html>
