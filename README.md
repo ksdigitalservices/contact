@@ -46,9 +46,9 @@ body {
   padding: 0 5px;
 }
 
-h1 {
+h3 {
   font-family: 'Poppins', sans-serif;
-  font-size: 18px;
+  font-size: 8px;
   font-weight: 700;
   color: #2c3e50;
   margin-bottom: 8px;
@@ -269,7 +269,7 @@ footer {
     padding: 12px;
   }
   
-  h1 {
+  h3 {
     font-size: 8px;
      text-align: left;
   }
@@ -303,7 +303,7 @@ footer {
 }
 
 @media (max-width: 350px) {
-  h1 {
+  h3 {
     font-size: 8px;
      text-align: left;
   }
@@ -355,7 +355,7 @@ button, a {
 <div class="container">
   <!-- 1. KS DIGITAL SERVICES Title - Left aligned -->
   <div class="title-section">
-    <h1>KS DIGITAL SERVICES</h1>
+    <h3>KS DIGITAL SERVICES</h3>
     
     <!-- First row: Main Page + Call Now -->
     <div class="button-row-1">
