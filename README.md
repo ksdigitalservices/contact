@@ -282,7 +282,7 @@ footer {
     font-size: 18px;
   }
   
-  .offerings-list li {
+  .offerings-list  {
     padding: 9px 10px 9px 5px;
     font-size: 15px;
     text-align: left;
@@ -316,15 +316,13 @@ footer {
     font-size: 18px;
   }
   
-  .offerings-list li {
+  .offerings-list {
     font-size: 12px;
     padding-left: 5px;
      text-align: left;
   }
   
-  .offerings-list li::before {
-    left: 5px;
-  }
+
 }
 
 /* Ensure no overflow */
